@@ -1,21 +1,18 @@
-import { Page } from "@dynatrace/strato-components-preview";
+import { Heading, Page } from "@dynatrace/strato-components-preview";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { Data } from "./pages/Data";
-import { Header } from "./components/Header";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
+import type { AppCompProps } from "./interfaces/Interface";
 
-export const App = () => {
+export const App: React.FC<AppCompProps> = () => {
   return (
     <Page>
       <Page.Header>
-        <Header />
+        <Heading as="h4" level={4}>
+          Yaml Code Editor
+        </Heading>
       </Page.Header>
       <Page.Main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/data" element={<Data />} />
-        </Routes>
+        <Home />
       </Page.Main>
     </Page>
   );
