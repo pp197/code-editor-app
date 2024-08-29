@@ -1,6 +1,6 @@
 {
   "name": "code-editor-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A starting project with routing, fetching data, and charting",
   "scripts": {
     "build": "dt-app build --verbose",
@@ -43,6 +43,7 @@
     "yaml": "^2.4.5"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.7",
     "@microsoft/eslint-plugin-sdl": "^0.2.0",
     "@types/node": "^16.11.34",
     "@types/react": "^18.2.63",
