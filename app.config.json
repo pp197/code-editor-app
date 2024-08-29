@@ -5,6 +5,38 @@
     "version": "0.0.0",
     "description": "A starting project with routing, fetching data, and charting",
     "id": "my.code.editor.app",
-    "scopes": [{ "name": "storage:logs:read", "comment": "default template" }, { "name": "storage:buckets:read", "comment": "default template" }]
+    "scopes": [
+      { "name": "storage:logs:read", "comment": "default template" },
+      { "name": "storage:buckets:read", "comment": "default template" }
+    ],
+    "csp": {
+      "script-src": [
+        {
+          "value": "https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/",
+          "comment": "Gives monaco script from CDN"
+        }
+      ],
+      "worker-src": [
+        {
+          "value": "blob",
+          "comment": "Creates a Web Worker"
+        }
+      ],
+      "style-src": [
+        {
+          "value": "https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/editor/editor.main.css",
+          "comment": "Gives monaco styles from cdn"
+        }
+      ],
+      "font-src": [
+        {
+          "value": "https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/base/browser/ui/codicons/codicon/codicon.ttf",
+          "comment": "Gives monaco fonts from CDN"
+        }
+      ]
+    },
+    "build": {
+      "additionalEntryPoints": ["monaco-editor/esm/vs/editor/editor.worker.js"]
+    }
   }
 }
